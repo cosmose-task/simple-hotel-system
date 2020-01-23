@@ -1,0 +1,171 @@
+{
+	"info": {
+		"_postman_id": "5b1b4d93-0080-4284-ac8d-d74d5d09de7d",
+		"name": "hotel-cosmose",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get reservations for customer : /reservations/{customerId}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:8080/reservations/-1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"reservations",
+						"-1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get rooms : /rooms",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:8080/rooms?",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"rooms"
+					],
+					"query": [
+						{
+							"key": "startDate",
+							"value": "2021-03-01",
+							"disabled": true
+						},
+						{
+							"key": "endDate",
+							"value": "2021-03-02",
+							"disabled": true
+						},
+						{
+							"key": "startRange",
+							"value": "200",
+							"disabled": true
+						},
+						{
+							"key": "endRange",
+							"value": "250",
+							"disabled": true
+						},
+						{
+							"key": "city",
+							"value": "Warsaw",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cancell reservation : /reservation/{customerId}/{reservationId}",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:8080/reservation/-1/-1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"reservation",
+						"-1",
+						"-1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add reservation: /reservation/{customerId}",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"startTime\":\"2021-03-01\",\r\n\t\"endTime\":\"2021-03-02\",\r\n\t\"room\":{\"id\":\"-1\"}\r\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/reservations/-1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"reservations",
+						"-1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add customer",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"firstName\":\"exampleFirstName\",\n\t\"lastName\":\"exampleLastName\"\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/customer",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"customer"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
